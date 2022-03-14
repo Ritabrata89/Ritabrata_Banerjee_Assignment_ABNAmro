@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  recipeapp:
+    image: 'recipemanagement:latest'
+    build:
+      context: .
+    container_name: recipeapp
+    ports:
+      - "8081:8081"
+    depends_on:
+      - recipedb
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-recipeapp:5432/recipe
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=create
+          
+  recipedb:
+    image: 'postgres'
+    container_name: postgres-recipeapp
+    environment:
+      - POSTGRES_DB=recipe
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
