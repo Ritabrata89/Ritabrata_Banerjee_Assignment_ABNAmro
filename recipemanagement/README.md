@@ -3,13 +3,16 @@
 #### API know how
 This application Web Service runs on a docker container using embedded tomcat in spring boot
 and uses Postgresql which also runs on a docker container.
+The application is developed following domain driven design approach. 
+It maintains **Single-Responsibility Principle** and **Liskov Substitution Principle**.
 
 The application has its API document, and it can be viewed using this url 
 http://localhost:8081/recipe-api-docs after application startup.
 
 * This API is safe from CSRF and XSS attack.
 * This API validates the category of the recipes and accepts only *Veg* and *Nonveg* as valid.
-* This API validates the instruction of the recipes and only accepts alpha-numeric values.
+* This API validates the instruction of the recipes and only accepts alpha-numeric values. 
+It ensures that unnecessary scripts (Example: ```<script>alert(1)</script>```) can not be injected.
 * This API validates the serving capacity of the recipes and accepts values between 2-8.
 
 #### How to build the project:
@@ -216,6 +219,7 @@ http://localhost:8081/recipe-api-docs after application startup.
 #### Improvements to make
 
 - Authentication process could be implemented.
+- Payload can be encrypted.
 - Code coverage for unit tests could be improved so that it covers all possible cases.
 - We can implement caching so that the application performs faster.
 - We can add capability to search by recipe id.
