@@ -6,9 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.http.HttpStatus;
 
-/**
- * Exception DTO class for the custom Exception of the application
- */
 
 @Getter
 @Setter

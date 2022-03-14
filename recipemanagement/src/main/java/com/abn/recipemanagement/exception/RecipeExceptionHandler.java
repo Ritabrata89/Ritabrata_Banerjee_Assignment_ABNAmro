@@ -10,11 +10,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-/**
- * Custom exception handler class of the application
- *@author rtbrt2009@gmail.com
- */
-
 @RestControllerAdvice
 public class RecipeExceptionHandler {
 	

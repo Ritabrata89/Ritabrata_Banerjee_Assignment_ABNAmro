@@ -5,10 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
-/**
- * Enum to initialize and define the custom error of the application
- *@author rtbrt2009@gmail.com
- */
 
 @AllArgsConstructor
 @Getter
